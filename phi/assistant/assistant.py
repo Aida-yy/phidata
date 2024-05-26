@@ -674,7 +674,7 @@ class Assistant(BaseModel):
 
             return yaml.dump([doc.to_dict() for doc in relevant_docs])
 
-        return json.dumps([doc.to_dict() for doc in relevant_docs], indent=2)
+        return json.dumps([doc.to_dict() for doc in relevant_docs], indent=2, ensure_ascii=False)
 
     def get_formatted_chat_history(self) -> Optional[str]:
         """Returns a formatted chat history to add to the user prompt"""
